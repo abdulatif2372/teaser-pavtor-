@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Ojuju:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@mixin work(){
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  
+}
+@mixin lora (){
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+@mixin merri (){
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+@mixin lato(){
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+@mixin ojuju(){
+    font-family: "Ojuju", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+@mixin roboto(){
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+*{
+    margin: 0 auto;
+    padding: 0 auto;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    text-decoration: none;
+    @include lora();
+}
+body{
+    line-height: 1.4;
+}
+img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.container{
+    max-width: 90%;
+    margin: 0 auto;
+}
+h2{
+    @include roboto();
+    font-size: 1.5rem;
+}
+.title{
+    h2{
+        @include merri();
+        display: inline;
+        font-size: 2rem;
+        border-left: 4px solid rgb(51, 0, 255);
+        text-indent: 10px;
+        padding-left: 10px;
+    }
+}
+p{
+    @include work();
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+a{
+    color: black;
+}
+@mixin card(){
+    width: 100%;
+    padding: 4rem 0;
+}
+@mixin grid ($repeat){
+    display: grid;
+    grid-template-columns:$repeat;
+    gap: 3rem;
+}
+@mixin btn($bgc, $color, $bgchover, $colorhover){
+    padding: 7px 15px;
+    border-radius: 30px;
+    border: 0;
+    font-size: 1.3rem;
+    transition: all 0.5s linear;
+    background-color:$bgc ;
+    color: $color;
+    &:hover{
+    background-color: $bgchover;
+    color: $colorhover;
+    }
+}
+button{
+    @include btn(green,white,white,black);
+}
